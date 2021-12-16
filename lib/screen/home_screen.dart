@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final double height=MediaQuery.of(context).size.height;
+    final  double width=MediaQuery.of(context).size.width;
     return Scaffold(
       drawer: Drawer(),
       appBar: AppBar(
@@ -33,7 +35,8 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body:Column(
+      body:
+      Column(
         children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
@@ -44,17 +47,23 @@ class _HomePageState extends State<HomePage> {
               color: Colors.red,
               borderRadius: BorderRadiusDirectional.circular(10)
           ),
-            child: Row(
-              children: [
-                Container(
-                height: 40,
-                width: 100,
-                color: Colors.blue,
-                )
-              ],
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                children: [
+                  Text("30% Off"
+                    , style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.blue[100]),
+                  ),
+                  SizedBox(height: 17,),
+                  Text("On Every Friday",
+                    style: TextStyle(color: Colors.white,),
+                  )
+                ],
+              ),
             ),
           ),
         )
+
         ]
       )
     );

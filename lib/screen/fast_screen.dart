@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
             decoration: BoxDecoration(
                 image: DecorationImage
                   (image: AssetImage
-                  ("assets/images/log.jpg"),
+                  ("assets/images/fstlog.jpg"),
                   fit: BoxFit.cover,
                 )
             ),
