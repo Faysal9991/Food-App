@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -62,8 +64,205 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-        )
+        ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Container(
+                  height: height*0.3,
+                  width: width*0.4,
+                  decoration: BoxDecoration(image:
+                  DecorationImage(image: AssetImage("assets/images/bargar.png"),fit: BoxFit.fitWidth
+                  ),
+                  borderRadius: BorderRadiusDirectional.circular(10),
+                    color: Colors.yellow,
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("Barger",style:GoogleFonts.abel
+                            (fontSize:30,color: Color(0xffFF0000),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
 
+
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("20% Cash back\n ONLY 45 TK",style:GoogleFonts.aleo
+                            (fontSize:15,color: Color(0xff33CC33),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: width*0.0081,),
+                Container(
+                  height: height*0.3,
+                  width: width*0.4,
+                  decoration: BoxDecoration(image:
+                  DecorationImage(image: AssetImage("assets/images/fried-chicken.png"),fit: BoxFit.fitWidth
+                  ),
+                    borderRadius: BorderRadiusDirectional.circular(10),
+                    color: Colors.yellow,
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
+
+
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("Fried chicken",style:GoogleFonts.abel
+                            (fontSize:18,color: Color(0xffFF0000),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
+
+
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("10% Cash back\n ONLY 200 TK",style:GoogleFonts.aleo
+                            (fontSize:15,color:Color(0xff33CC33),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ],
+                  ),),
+                SizedBox(width: width*0.0081,),
+                Container(
+                  height: height*0.3,
+                  width: width*0.4,
+                  decoration: BoxDecoration(image:
+                  DecorationImage(image: AssetImage("assets/images/bargar.png"),fit: BoxFit.fitWidth
+                  ),
+                    borderRadius: BorderRadiusDirectional.circular(10),
+                    color: Colors.yellow,
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
+
+
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("Barger",style:GoogleFonts.abel
+                            (fontSize:30,color: Color(0xffFF0000),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
+
+
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("20% Cash back\n ONLY 45 TK",style:GoogleFonts.aleo
+                            (fontSize:15,color: Color(0xff33CC33),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ],
+                  ),),
+                SizedBox(width: width*0.0081,),
+                Container(
+                  height: height*0.3,
+                  width: width*0.4,
+                  decoration: BoxDecoration(image:
+                  DecorationImage(image: AssetImage("assets/images/bargar.png"),fit: BoxFit.fitWidth
+                  ),
+                    borderRadius: BorderRadiusDirectional.circular(10),
+                    color: Colors.yellow,
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
+
+
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("Barger",style:GoogleFonts.abel
+                            (fontSize:30,color: Color(0xffFF0000),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
+
+
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("20% Cash back\n ONLY 45 TK",style:GoogleFonts.aleo
+                            (fontSize:15,color: Color(0xff33CC33),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ],
+                  ),),
+                SizedBox(width: width*0.0081,),
+                Container(
+                  height: height*0.3,
+                  width: width*0.4,
+                  decoration: BoxDecoration(image:
+                  DecorationImage(image: AssetImage("assets/images/bargar.png"),fit: BoxFit.fitWidth
+                  ),
+                    borderRadius: BorderRadiusDirectional.circular(10),
+                    color: Colors.yellow,
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
+
+
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("Barger",style:GoogleFonts.abel
+                            (fontSize:30,color: Color(0xffFF0000),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 0.7,),
+
+
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("20% Cash back\n ONLY 45 TK",style:GoogleFonts.aleo
+                            (fontSize:15,color: Color(0xff33CC33),fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ],
+                  ),),
+              ],
+            ),
+
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Text.rich(
+              TextSpan(
+                  text: "Most",
+                  style: GoogleFonts.lato(
+                    textStyle: TextStyle
+                      (color: Colors.red, fontSize:25,fontWeight: FontWeight.bold
+                    ),
+                  ),
+                  children: [
+                    TextSpan(
+                      text: "  Favourite",
+                      style: GoogleFonts.lato(
+                        textStyle: TextStyle(color: Color(0xff2d9a2d), fontSize:25,fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
+                  ]
+              ),
+            ),
+          ),
         ]
       )
     );
