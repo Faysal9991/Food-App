@@ -53,6 +53,10 @@ FoodDetailsModel fastfoodDetails6= FoodDetailsModel(
     "Hot dog",
     "assets/images/Hotdog.png",
     125);
+FoodDetailsModel bdPopulerDetails1= FoodDetailsModel(
+    "Hot dog",
+    "assets/images/Hotdog.png",
+    125);
 
 
 
@@ -61,7 +65,7 @@ List<FoodDetailsModel> foodDetails=[
 foodDetails2,
 foodDetails3,
 foodDetails4,
-foodDetails5,
+foodDetails5
 ];
 List<FoodDetailsModel> fastFoodDetails=[
   fastfoodDetails1,
@@ -194,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                     height: height*0.04,
                     width: width*0.3,
                     decoration: BoxDecoration(
-                      color: Colors.yellow,
+                      color: index==1 ? Colors.teal:Colors.yellow,
                       borderRadius: BorderRadiusDirectional.circular(25),
                     ),
                     child:  Padding(
@@ -290,7 +294,7 @@ class _HomePageState extends State<HomePage> {
 
           Expanded(
             child: ListView.builder(
-              itemCount: index == 0 ? foodDetails.length : index ==1 ? fastFoodDetails.length :bdPopulerDetails.length,
+              itemCount: foodDetails.length,
             scrollDirection: Axis.horizontal,
               itemBuilder: (context, index){
                 return InkWell(
@@ -350,7 +354,71 @@ class _HomePageState extends State<HomePage> {
                 );
               },
             ),
-          )
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: fastFoodDetails.length,
+            scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index){
+                return InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder:
+                    (context)=>FoodDetails(fName: fastFoodDetails[index].foodname
+                      ,fImage: fastFoodDetails[index].foodimage, fPrice:fastFoodDetails[index].foodprice,)));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: height*0.35,
+                          width: width*0.46,
+                          decoration: BoxDecoration(
+
+                            color: Colors.yellow,
+                              borderRadius: BorderRadiusDirectional.circular(10),
+
+                          ),
+                          child: Column(
+                            children: [
+
+                              Padding(
+                                padding: EdgeInsets.only(top: height*0.01),
+                                child: Image.asset(fastFoodDetails[index].foodimage),
+                              ),
+                              SizedBox(height: height*0.04),
+                              Text(fastFoodDetails[index].foodname,style: GoogleFonts.lato(
+                                textStyle: TextStyle
+                                  (color: Colors.black, fontSize:width*0.07,fontWeight: FontWeight.bold
+                                ),
+                              ),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: width/7),
+                                    child: Text("Price:  ",style: GoogleFonts.lato(
+                                      textStyle: TextStyle
+                                        (color: Colors.black, fontSize:width*0.05,fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                    ),
+                                  ),
+                                  Text(fastFoodDetails[index].foodprice.toString(),style: TextStyle(color: Colors.black),),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+
         ]
       )
     );
