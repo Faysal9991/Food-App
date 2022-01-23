@@ -6,46 +6,82 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 FoodDetailsModel foodDetails1=FoodDetailsModel(
     "Meat-Burger",
-    "assets/images/bargar.png",
+    "assets/images/burger.png",
      50
     );
 FoodDetailsModel foodDetails2=FoodDetailsModel(
     "Meat-Burger",
     "assets/images/bargar.png",
     50
-);FoodDetailsModel foodDetails3=FoodDetailsModel(
-    "Meat-Burger",
-    "assets/images/bargar.png",
-    50
-);FoodDetailsModel foodDetails4=FoodDetailsModel(
-    "Meat-Burger",
-    "assets/images/bargar.png",
-    50
-);FoodDetailsModel foodDetails5=FoodDetailsModel(
-    "Meat-Burger",
-    "assets/images/bargar.png",
-    50
-);FoodDetailsModel foodDetails6=FoodDetailsModel(
-    "Meat-Burger",
-    "assets/images/bargar.png",
-    50
-);FoodDetailsModel foodDetails7=FoodDetailsModel(
+);
+FoodDetailsModel foodDetails3=FoodDetailsModel(
     "Meat-Burger",
     "assets/images/bargar.png",
     50
 );
+FoodDetailsModel foodDetails4=FoodDetailsModel(
+    "Meat-Burger",
+    "assets/images/bargar.png",
+    50
+);
+FoodDetailsModel foodDetails5=FoodDetailsModel(
+    "Meat-Burger",
+    "assets/images/bargar.png",
+    50
+);
+FoodDetailsModel fastfoodDetails1= FoodDetailsModel(
+    "Hamburger",
+    "assets/images/burger.png",
+    70);
+FoodDetailsModel fastfoodDetails2= FoodDetailsModel(
+    "Cheeseburger",
+    "assets/images/Cheeseburger.png",
+    90);
+FoodDetailsModel fastfoodDetails3= FoodDetailsModel(
+    "Sandwich",
+    "assets/images/Sandwich.png",
+    75);
+FoodDetailsModel fastfoodDetails4= FoodDetailsModel(
+    "Milk shake",
+    "assets/images/Milkshake.png",
+    125);
+FoodDetailsModel fastfoodDetails5= FoodDetailsModel(
+    "Burrito",
+    "assets/images/Burrito.png",
+    125);
+FoodDetailsModel fastfoodDetails6= FoodDetailsModel(
+    "Hot dog",
+    "assets/images/Hotdog.png",
+    125);
+
+
+
 List<FoodDetailsModel> foodDetails=[
   foodDetails1,
 foodDetails2,
 foodDetails3,
 foodDetails4,
 foodDetails5,
-foodDetails6,
-foodDetails7
 ];
+List<FoodDetailsModel> fastFoodDetails=[
+  fastfoodDetails1,
+  fastfoodDetails2,
+  fastfoodDetails3,
+  fastfoodDetails4,
+  fastfoodDetails5,
+  fastfoodDetails6
 
+];
+List<FoodDetailsModel> bdPopulerDetails=[
 
+];
+List<FoodDetailsModel> confectioneryDetails=[
 
+];
+List<FoodDetailsModel> drinksDetails=[
+
+];
+int index = 0;
 
 
 class HomePage extends StatefulWidget {
@@ -93,7 +129,6 @@ class _HomePageState extends State<HomePage> {
           height: 150,
           decoration: BoxDecoration(
               image: DecorationImage(image: AssetImage("assets/images/homscnd.jpg"),fit: BoxFit.cover),
-              color: Colors.red,
               borderRadius: BorderRadiusDirectional.circular(10)
           ),
             child: Align(
@@ -112,6 +147,11 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+          Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Align(alignment: Alignment.bottomLeft,
+                child: Text("category",style: GoogleFonts.aBeeZee(color: Colors.black,fontSize: 25),)),
+          ),
         Padding(
           padding: const EdgeInsets.all(6.0),
           child: SingleChildScrollView(
@@ -119,14 +159,17 @@ class _HomePageState extends State<HomePage> {
             child: Row(
 
               children: [
-               InkWell(onTap: (){
-
-               },
+               InkWell(
+                 onTap: (){
+                   setState(() {
+                     index=0;
+                   });
+                 } ,
                  child: Container(
                    height: height*0.04,
                    width: width*0.3,
                    decoration: BoxDecoration(
-                     color: Colors.yellow,
+                     color: index==0 ? Colors.teal:Colors.yellow,
                      borderRadius: BorderRadiusDirectional.circular(25),
                    ),
                    child:  Padding(
@@ -141,74 +184,102 @@ class _HomePageState extends State<HomePage> {
                  ),
                ),
                 SizedBox(width: width*0.009),
-                Container(
-                  height: height*0.04,
-                  width: width*0.3,
-                  decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadiusDirectional.circular(25),
-                  ),
-                  child:  Padding(
-                    padding:  EdgeInsets.only(top: height*0.007,left: width*0.05),
-                    child: Text("Fast Food",style: GoogleFonts.lato(
-                      textStyle: TextStyle
-                        (color: Colors.black, fontSize:width*0.04,fontWeight: FontWeight.bold
+                InkWell(
+                  onTap: (){
+                    setState(() {
+                      index=1;
+                    });
+                  } ,
+                  child: Container(
+                    height: height*0.04,
+                    width: width*0.3,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadiusDirectional.circular(25),
+                    ),
+                    child:  Padding(
+                      padding:  EdgeInsets.only(top: height*0.007,left: width*0.05),
+                      child: Text("Fast Food",style: GoogleFonts.lato(
+                        textStyle: TextStyle
+                          (color: Colors.black, fontSize:width*0.04,fontWeight: FontWeight.bold
+                        ),
+                      )
                       ),
-                    )
                     ),
                   ),
                 ),
                 SizedBox(width: width*0.009),
-                Container(
-                  height: height*0.04,
-                  width: width*0.3,
-                  decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadiusDirectional.circular(25),
-                  ),
-                  child:  Padding(
-                    padding:  EdgeInsets.only(top: height*0.007,left: width*0.016),
-                    child: Text("Bd Popular",style: GoogleFonts.lato(
-                      textStyle: TextStyle
-                        (color: Colors.black, fontSize:width*0.04,fontWeight: FontWeight.bold
+                InkWell(
+                  onTap: (){
+                    setState(() {
+                      index=2;
+                    });
+                  } ,
+                  child: Container(
+                    height: height*0.04,
+                    width: width*0.3,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadiusDirectional.circular(25),
+                    ),
+                    child:  Padding(
+                      padding:  EdgeInsets.only(top: height*0.007,left: width*0.016),
+                      child: Text("Bd Popular",style: GoogleFonts.lato(
+                        textStyle: TextStyle
+                          (color: Colors.black, fontSize:width*0.04,fontWeight: FontWeight.bold
+                        ),
+                      )
                       ),
-                    )
                     ),
                   ),
                 ),
                 SizedBox(width: width*0.009),
-                Container(
-                  height: height*0.04,
-                  width: width*0.3,
-                  decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadiusDirectional.circular(25),
-                  ),
-                  child:  Padding(
-                    padding:  EdgeInsets.only(top: height*0.007,left: width*0.016),
-                    child: Text("Confectionery",style: GoogleFonts.lato(
-                      textStyle: TextStyle
-                        (color: Colors.black, fontSize:width*0.04,fontWeight: FontWeight.bold
+                InkWell(
+                  onTap: (){
+                    setState(() {
+                      index=3;
+                    });
+                  } ,
+                  child: Container(
+                    height: height*0.04,
+                    width: width*0.3,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadiusDirectional.circular(25),
+                    ),
+                    child:  Padding(
+                      padding:  EdgeInsets.only(top: height*0.007,left: width*0.016),
+                      child: Text("Confectionery",style: GoogleFonts.lato(
+                        textStyle: TextStyle
+                          (color: Colors.black, fontSize:width*0.04,fontWeight: FontWeight.bold
+                        ),
+                      )
                       ),
-                    )
                     ),
                   ),
                 ),
                 SizedBox(width: width*0.009),
-                Container(
-                  height: height*0.04,
-                  width: width*0.3,
-                  decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadiusDirectional.circular(25),
-                  ),
-                  child:  Padding(
-                    padding:  EdgeInsets.only(top: height*0.007,left: width*0.016),
-                    child: Text("Drinks",style: GoogleFonts.lato(
-                      textStyle: TextStyle
-                        (color: Colors.black, fontSize:width*0.04,fontWeight: FontWeight.bold
+                InkWell(
+                  onTap: (){
+                    setState(() {
+                      index=3;
+                    });
+                  } ,
+                  child: Container(
+                    height: height*0.04,
+                    width: width*0.3,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadiusDirectional.circular(25),
+                    ),
+                    child:  Padding(
+                      padding:  EdgeInsets.only(top: height*0.007,left: width*0.016),
+                      child: Text("Drinks",style: GoogleFonts.lato(
+                        textStyle: TextStyle
+                          (color: Colors.black, fontSize:width*0.04,fontWeight: FontWeight.bold
+                        ),
+                      )
                       ),
-                    )
                     ),
                   ),
                 ),
@@ -216,10 +287,11 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+
           Expanded(
             child: ListView.builder(
-              itemCount: foodDetails.length,
-              scrollDirection: Axis.horizontal,
+              itemCount: index == 0 ? foodDetails.length : index ==1 ? fastFoodDetails.length :bdPopulerDetails.length,
+            scrollDirection: Axis.horizontal,
               itemBuilder: (context, index){
                 return InkWell(
                   onTap: (){

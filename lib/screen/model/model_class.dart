@@ -7,3 +7,8 @@ class FoodDetailsModel{
 
   FoodDetailsModel(this.foodname, this.foodimage, this.foodprice);
 }
+class FoodmenuModel{
+  late List<String> foodmenulist;
+
+  FoodmenuModel(this.foodmenulist);
+}
