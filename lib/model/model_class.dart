@@ -8,3 +8,10 @@ class FoodDetailsModel{
 
   FoodDetailsModel(this.foodname, this.foodimage);
 }
+class RecomendfoddetailsModel{
+  late String foodname;
+  late String foodimage;
+  late int foodprice;
+
+  RecomendfoddetailsModel(this.foodname, this.foodimage, this.foodprice);
+}

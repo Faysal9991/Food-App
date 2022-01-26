@@ -36,6 +36,13 @@ FoodDetailsModel menuDetails6= FoodDetailsModel(
     "Drinks",
     "assets/images/drink.png",
     );
+RecomendfoddetailsModel recomnded1=RecomendfoddetailsModel(
+    "Biriani",
+    "assets/images/biriyani.png",
+    150);
+List<RecomendfoddetailsModel>Recomendedfooddetails=[
+  recomnded1
+];
 List<FoodDetailsModel> fastFoodDetails=[
   menuDetails1,
   menuDetails2,
@@ -45,6 +52,7 @@ List<FoodDetailsModel> fastFoodDetails=[
   menuDetails6
 ];
 int index=0;
+
 
 
 class HomePage extends StatefulWidget {
@@ -110,6 +118,60 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+          Align(alignment: Alignment.topLeft,
+              child: Text("Recomended",style: GoogleFonts.aBeeZee(color: Colors.black,fontSize: 20,shadows: [
+                Shadow(
+                  offset: Offset(.0, 1.01),
+                  blurRadius: 7.0,
+                  color: Colors.grey,
+                ),
+
+              ],))),
+          Expanded(
+            child: ListView.builder(
+              itemCount: Recomendedfooddetails.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index){
+                return Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: height*0.23,
+                        width: width*0.35,
+                        decoration: BoxDecoration(
+
+                          color: Colors.yellow,
+                          borderRadius: BorderRadiusDirectional.circular(10),
+
+                        ),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(top: height*0.01),
+                              child: Image.asset(Recomendedfooddetails[index].foodimage,height: height*0.1,width: width*0.7,),
+                            ),
+                            Text(Recomendedfooddetails[index].foodname,style: GoogleFonts.lato(
+                              textStyle: TextStyle
+                                (color: Colors.grey, fontSize:width*0.05,fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            ),
+                            Text(Recomendedfooddetails[index].foodprice.toString(),style: GoogleFonts.lato(
+                              textStyle: TextStyle
+                                (color: Colors.green, fontSize:width*0.04,fontWeight: FontWeight.bold
+                              ),
+                            ),)
+                          ],
+                        ),
+                      ),
+                    ],
+
+                  ),
+                );
+              },
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(3.0),
             child: Align(alignment: Alignment.bottomLeft,
@@ -126,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         children: [
                           Container(
-                            height: height*0.24,
+                            height: height*0.23,
                             width: width*0.35,
                             decoration: BoxDecoration(
 
@@ -142,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 Text(fastFoodDetails[index].foodname,style: GoogleFonts.lato(
                                   textStyle: TextStyle
-                                    (color: Colors.black, fontSize:width*0.04,fontWeight: FontWeight.bold
+                                    (color: Colors.grey, fontSize:width*0.04,fontWeight: FontWeight.bold
                                   ),
                                 ),
                                 ),
@@ -199,10 +261,13 @@ class _HomePageState extends State<HomePage> {
     }
     });
                                   },
-                                  child: CircleAvatar(
-                                    radius: 24,
-                                    backgroundColor: Color(0xffd4d181),
-                                    child: Icon(Icons.arrow_forward_rounded,size: 22,color: Colors.green),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: CircleAvatar(
+                                      radius: 20,
+                                      backgroundColor: Color(0xffd4d181),
+                                      child: Icon(Icons.arrow_forward_rounded,size: 22,color: Colors.green),
+                                    ),
                                   ),
                                 ),
                               ],
@@ -215,41 +280,28 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-          Column(children: [
-            Align(
-                alignment: Alignment.topLeft,
-                child: Text("Recomnded",style: GoogleFonts.lato(fontSize: 20,color: Colors.pink),))
+
+          FloatingNavigationBar(
+            barHeight: height*0.07,
+            barWidth: width,
+          backgroundColor: Colors.black87,
+          iconColor: Colors.yellow,
+          textStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 14.0,
+          ),
+          iconSize: 20.0,
+            items: [
+          NavBarItems(icon: Icons.home,title: "Home"),
+          NavBarItems( icon: Icons.search,title: "Search"),
+          NavBarItems(icon: Icons.shop, title: "Cart"),
 
           ],
-
+          onChanged: (value) {
+          // USE YOUR STATE MANAGEMENT TECHNIQUE TO GET
+          // AND CHANGE INDEX OF NAVIGATION BAR
+          },
           ),
-
-    Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: SingleChildScrollView(
-        child: FloatingNavigationBar(
-          barHeight: height*0.09,
-          barWidth: width,
-        backgroundColor: Colors.black87,
-        iconColor: Colors.yellow,
-        textStyle: TextStyle(
-        color: Colors.white,
-        fontSize: 14.0,
-        ),
-        iconSize: 20.0,
-          items: [
-        NavBarItems(icon: Icons.home,title: "Home"),
-        NavBarItems( icon: Icons.search,title: "Search"),
-        NavBarItems(icon: Icons.shop, title: "Cart"),
-
-        ],
-        onChanged: (value) {
-        // USE YOUR STATE MANAGEMENT TECHNIQUE TO GET
-        // AND CHANGE INDEX OF NAVIGATION BAR
-        },
-        ),
-      ),
-    ),
 
         ]
 
