@@ -40,8 +40,25 @@ RecomendfoddetailsModel recomnded1=RecomendfoddetailsModel(
     "Biriani",
     "assets/images/biriyani.png",
     150);
+RecomendfoddetailsModel recomnded2=RecomendfoddetailsModel(
+    "Haleem",
+    "assets/images/hellem.png",
+    200);
+RecomendfoddetailsModel recomnded3=RecomendfoddetailsModel(
+    "Hot dog",
+    "assets/images/Hotdog.png",
+    200);
+RecomendfoddetailsModel recomnded4=RecomendfoddetailsModel(
+    "Sandwitch",
+    "assets/images/Sandwich.png",
+    120);
+
 List<RecomendfoddetailsModel>Recomendedfooddetails=[
-  recomnded1
+  recomnded1,
+  recomnded2,
+  recomnded3,
+  recomnded4,
+
 ];
 List<FoodDetailsModel> fastFoodDetails=[
   menuDetails1,
@@ -157,11 +174,18 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             ),
-                            Text(Recomendedfooddetails[index].foodprice.toString(),style: GoogleFonts.lato(
-                              textStyle: TextStyle
-                                (color: Colors.green, fontSize:width*0.04,fontWeight: FontWeight.bold
-                              ),
-                            ),)
+                            Row(
+                              children: [
+                                Text("        Price ",style: GoogleFonts.lato(
+                                  textStyle: TextStyle
+                                    (color: Colors.red, fontSize:width*0.05,fontWeight: FontWeight.bold))),
+                                Text(Recomendedfooddetails[index].foodprice.toString(),style: GoogleFonts.lato(
+                                  textStyle: TextStyle
+                                    (color: Colors.green, fontSize:width*0.04,fontWeight: FontWeight.bold
+                                  ),
+                                ),),
+                              ],
+                            )
                           ],
                         ),
                       ),
