@@ -44,12 +44,12 @@ class _FoodDetailsState extends State<FoodDetails> {
                child: Row(
                  children: [
                    InkWell(
-                     onTap:  (){
-                       Navigator.push(context,
-                           MaterialPageRoute(builder: (context) => HomePage
-
-                           ));
-                     },
+                     // onTap:  (){
+                     //   Navigator.push(context,
+                     //       MaterialPageRoute(builder: (context) => HomePage
+                     //
+                     //       ));
+                     // },
                      child: CircleAvatar(
                        radius: 20,
                        backgroundColor: Color(0xffFFFFFF),
