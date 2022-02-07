@@ -12,6 +12,8 @@ class RecomendfoddetailsModel{
   late String foodname;
   late String foodimage;
   late int foodprice;
+  late String detls;
 
-  RecomendfoddetailsModel(this.foodname, this.foodimage, this.foodprice);
+  RecomendfoddetailsModel(
+      this.foodname, this.foodimage, this.foodprice, this.detls);
 }
