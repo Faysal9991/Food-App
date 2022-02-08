@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/screen/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+int val=0;
 
 class FoodDetails extends StatefulWidget {
   String fName;
@@ -44,12 +45,12 @@ class _FoodDetailsState extends State<FoodDetails> {
                child: Row(
                  children: [
                    InkWell(
-                     // onTap:  (){
-                     //   Navigator.push(context,
-                     //       MaterialPageRoute(builder: (context) => HomePage
-                     //
-                     //       ));
-                     // },
+                     onTap:  (){
+                       Navigator.push(context,
+                           MaterialPageRoute(builder: (context) => HomePage()
+
+                           ));
+                     },
                      child: CircleAvatar(
                        radius: 20,
                        backgroundColor: Color(0xffFFFFFF),
@@ -110,6 +111,46 @@ class _FoodDetailsState extends State<FoodDetails> {
                     ),
                   ],
                 ),
+                 Container(
+                   height: height*0.05,
+                   width: width*0.3,
+                   decoration: BoxDecoration(
+                     color: Colors.green,
+                     borderRadius: BorderRadius.circular(30),
+                   ),
+                   child: Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                     children: [
+                       InkWell(
+                           onTap:  (){
+                             setState(() {
+                               val--;
+                             });
+                           },
+                           child: Icon( Icons.remove,size: height*0.04,)),
+                       
+                       Container(
+                         height: height*0.09,
+                         width: width*0.1,
+                         decoration: BoxDecoration(
+                           color: Colors.white,
+                           shape: BoxShape.circle
+                         ),
+                         child: Padding(
+                           padding:  EdgeInsets.only(top: height*0.015,left: width*0.035),
+                           child: Text(val.toString(),style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                         ),
+                       ),
+                       InkWell(
+                           onTap:  (){
+                             setState(() {
+                               val++;
+                             });
+                           },
+                           child: Icon(Icons.add,size: height*0.04,)),
+                     ],
+                   ),
+                 ),
                  Padding(
                    padding: const EdgeInsets.all(7.0),
                    child: Align(alignment: Alignment.topLeft,
