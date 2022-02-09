@@ -124,7 +124,8 @@ class _FoodDetailsState extends State<FoodDetails> {
                        InkWell(
                            onTap:  (){
                              setState(() {
-                               val--;
+                              if(val>0)
+                                val--;
                              });
                            },
                            child: Icon( Icons.remove,size: height*0.04,)),
@@ -144,7 +145,8 @@ class _FoodDetailsState extends State<FoodDetails> {
                        InkWell(
                            onTap:  (){
                              setState(() {
-                               val++;
+                               if(val<10)
+                                 val++;
                              });
                            },
                            child: Icon(Icons.add,size: height*0.04,)),
